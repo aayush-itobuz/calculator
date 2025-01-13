@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  .output {
+    width: 500px;
+    height: 100px;
+    margin: 5rem auto;
+    background-color: rgb(190, 196, 196);
+    border-radius: 10px;
+  }
+
+  .input {
+    margin: auto;
+  }
+}
+
+.input-btn-conatiner {
+  padding: 5px;
+
+  button {
+    padding: 1rem;
+    width: 55px;
+    margin: 3px;
+  }
+}
