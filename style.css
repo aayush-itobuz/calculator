@@ -8,20 +8,20 @@ body {
 }
 
 .container .output {
-  width: 500px;
-  height: 100px;
+  max-width: 500px;
   margin: 5rem auto;
   background-color: rgb(190, 196, 196);
   border-radius: 10px;
+  overflow: hidden;
 }
 .container .input {
   margin: auto;
 }
 
-.input-btn-conatiner {
+.input-btn-container {
   padding: 5px;
 }
-.input-btn-conatiner button {
+.input-btn-container button {
   padding: 1rem;
   width: 55px;
   margin: 3px;

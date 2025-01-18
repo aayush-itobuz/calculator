@@ -17,7 +17,7 @@ const display = (number) => {
 
 const clearAll = () => {
   prevNum = '';
-  currNum = '';
+  currNum = '0';
   calOperator = '';
 }
 
@@ -32,10 +32,9 @@ const inputNum = (number) => {
 
 const inputDot = (dot) => {
   currNum = String(currNum);
-  if(currNum.includes('.')){
-    return;
+  if(!currNum.includes('.')){
+    currNum += dot;
   }
-  currNum += dot;
 }
 
 const changeSign = () => {
@@ -43,11 +42,17 @@ const changeSign = () => {
 }
 
 const clearNum = () => {
-  if((currNum == "Infinity") || (currNum == "-Infinity") || (currNum == "NaN")){
+  if(!isFinite(currNum) || isNaN(currNum)){
     clearAll();
+    display('0');
+    return;
   }
   currNum = String(currNum);
-  currNum = currNum.substring(0,currNum.length-1);
+  if(currNum.length > 1){
+    currNum = currNum.substring(0,currNum.length-1);
+  }else {
+    currNum = '0';
+  }
   display(currNum);
 }
 
@@ -83,10 +88,10 @@ const calculate = () => {
       res = prevNum / currNum;
       break;
     case '%':
-      if(String(currNum) === ''){
+      if(isNaN(currNum) || currNum === ''){
         res = prevNum / 100;
       }else {
-        res = prevNum % currNum;
+        res = (prevNum / 100) * currNum;
       }
       break;
     default:
@@ -138,6 +143,3 @@ clear.addEventListener('click', () => {
   console.log("clear");
   clearNum();
 })
-
-
-

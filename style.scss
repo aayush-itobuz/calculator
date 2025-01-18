@@ -10,11 +10,10 @@ body {
 .container {
   .output {
     max-width: 500px;
-    height: 100px;
     margin: 5rem auto;
     background-color: rgb(190, 196, 196);
     border-radius: 10px;
-    overflow: auto;
+    overflow: hidden;
   }
 
   .input {
@@ -22,7 +21,7 @@ body {
   }
 }
 
-.input-btn-conatiner {
+.input-btn-container {
   padding: 5px;
 
   button {
