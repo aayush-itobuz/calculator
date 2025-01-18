@@ -27,7 +27,6 @@ const inputNum = (number) => {
   }else {
     currNum += number;
   }
-  console.log("op " + calOperator, "prev " + prevNum, "curr " +currNum);
 }
 
 const inputDot = (dot) => {
@@ -57,7 +56,6 @@ const clearNum = () => {
 }
 
 const inputOperator = (operator) => {
-  console.log("op " + calOperator, "prev " + prevNum, "curr " +currNum);
   if(currNum != ''){
     prevNum = currNum;
   }else if(currNum === 0){
@@ -65,12 +63,10 @@ const inputOperator = (operator) => {
   }
   calOperator = operator;
   currNum = '';
-  console.log("op " + calOperator, "prev " + prevNum, "curr " +currNum);
 }
 
 const calculate = () => {
   let res = '';
-  console.log("op " + calOperator, "prev " + prevNum, "curr " +currNum);
   prevNum = parseFloat(prevNum);
   currNum = parseFloat(currNum);
   
@@ -100,12 +96,10 @@ const calculate = () => {
 
   currNum = res;
   calOperator = '';
-  console.log("op " + calOperator, "prev " + prevNum, "curr " +currNum);
 }
 
 number.forEach( (num) => {
   num.addEventListener('click', () => {
-    console.log(num.innerHTML);
     inputNum(num.innerHTML);
     display(currNum);
   })
@@ -121,7 +115,6 @@ operator.forEach( (operator) => {
 equalSign.addEventListener('click', () => {
   calculate();
   display(currNum);
-  console.log(currNum);
 })
 
 dot.addEventListener('click', () => {
@@ -140,6 +133,5 @@ signChange.addEventListener('click', () => {
 })
 
 clear.addEventListener('click', () => {
-  console.log("clear");
   clearNum();
 })
